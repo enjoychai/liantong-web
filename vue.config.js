@@ -4,7 +4,7 @@
  * @author SunSeekerX
  * @time 2019-08-13 19:50:20
  * @LastEditors SunSeekerX
- * @LastEditTime 2019-12-17 11:00:53
+ * @LastEditTime 2019-12-17 21:46:41
  */
 
 'use strict'
@@ -21,6 +21,7 @@ const productionGzipExtensions = /\.(js|css|json|txt|html|ico|svg)(\?.*)?$/i
 
 module.exports = {
   publicPath: './',
+  productionSourceMap: false,
   // publicPath: '/app/liantong/',
   // lintOnSave: false,
   // devServer

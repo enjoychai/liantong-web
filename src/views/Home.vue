@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @time: 2019-12-16 22:43:06
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2019-12-17 21:22:02
+ * @LastEditTime: 2019-12-17 21:42:56
  -->
 
 <template>
@@ -54,13 +54,16 @@
             <el-form-item label="数据条数，最大500">
               <el-input v-model.number="limit"></el-input>
             </el-form-item>
+            <el-form-item label="自定义偏移量，不能超过总数，可以跳过新数据拉取老的数据">
+              <el-input v-model.number="offset"></el-input>
+            </el-form-item>
             <el-form-item>
               <!-- textarea -->
               <el-input
                 v-model="form.getCode"
                 class="textarea"
                 type="textarea"
-                :rows="20"
+                :rows="10"
                 placeholder="暂无数据,默认查询50条数据，按创建时间排序，也就是优先查询最新的数据。"
                 readonly
                 disabled
