@@ -1,0 +1,25 @@
+/**
+ * @name Global theme and common style
+ * @author SunSeekerX
+ * @time 2019-08-14 20:11:23
+ * @describe If you want to add some new global theme , don't forget name space, using the frist word will be best.
+ * @LastEditors SunSeekerX
+ * @LastEditTime 2019-12-16 23:39:01
+ */
+
+// About position
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Disable select
+@mixin disable-select {
+  -webkit-touch-callout: none;
+  -moz-user-select: none; /*火狐*/
+  -webkit-user-select: none; /*webkit浏览器*/
+  -ms-user-select: none; /*IE10*/
+  -khtml-user-select: none; /*早期浏览器*/
+  user-select: none;
+}
