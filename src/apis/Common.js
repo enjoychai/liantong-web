@@ -3,7 +3,7 @@
  * @author SunSeekerX
  * @time 2019-12-16 23:47:34
  * @LastEditors SunSeekerX
- * @LastEditTime 2019-12-17 01:21:28
+ * @LastEditTime 2019-12-17 16:08:12
  */
 
 import axios from '@/utils/Request/index.js'
@@ -25,6 +25,16 @@ export default {
       data: {
         limit,
         offset
+      }
+    })
+  },
+  friendHelp({ code, encryptMobile }) {
+    return axios.request({
+      url: '/friend-Help',
+      method: 'post',
+      data: {
+        encryptMobile,
+        code
       }
     })
   }

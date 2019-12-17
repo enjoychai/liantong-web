@@ -3,7 +3,7 @@
  * @author SunSeekerX
  * @time 2019-12-16 22:44:48
  * @LastEditors SunSeekerX
- * @LastEditTime 2019-12-17 00:44:58
+ * @LastEditTime 2019-12-17 18:54:52
  */
 
 import Vue from 'vue'
@@ -19,7 +19,8 @@ import {
   Input,
   RadioGroup,
   Radio,
-  Notification
+  Notification,
+  Card,
 } from 'element-ui'
 
 Vue.use(Button)
@@ -32,5 +33,6 @@ Vue.use(FormItem)
 Vue.use(Input)
 Vue.use(RadioGroup)
 Vue.use(Radio)
+Vue.use(Card)
 
 Vue.prototype.$notify = Notification
