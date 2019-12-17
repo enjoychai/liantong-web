@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @time: 2019-12-16 22:43:06
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2019-12-17 19:10:38
+ * @LastEditTime: 2019-12-17 21:22:02
  -->
 
 <template>
@@ -71,9 +71,7 @@
               <el-button type="primary" @click="onGetCode">获取数据</el-button>
             </el-form-item>
             <el-form-item>
-              <el-button type="primary" @click="onGetCodeNextPage"
-                >下一页</el-button
-              >
+              <el-button type="primary" @click="onGetCodeNextPage">下一页</el-button>
               <el-button
                 type="primary"
                 @click="
@@ -82,8 +80,8 @@
                     (limit = 50),
                     (offset = 0)
                 "
-                >重置</el-button
-              >
+              >重置</el-button>
+              <el-button type="info">总条数： {{ form.count }}</el-button>
             </el-form-item>
           </el-form>
         </el-tab-pane>
@@ -114,8 +112,7 @@
                     (form.reCode = ''),
                     (helpResTableData = [])
                 "
-                >清空</el-button
-              >
+              >清空</el-button>
             </el-form-item>
           </el-form>
 
@@ -132,16 +129,16 @@
         <div slot="header" class="clearfix">
           <span>提示</span>
         </div>
+        <div class="text item">作者：SunSeekerX</div>
+        <div class="text item">QQ: 1647800606</div>
+        <div class="text item">论坛交流群: 172925124</div>
+        <div class="text item">我的备用交流群：967946952</div>
+        <div class="text item">大家和平使用，本系统仅用于学习开发！后续放上源码。</div>
+        <div class="text item">如果我帮到了你，你可以请我喝杯一点点哦！</div>
         <div class="text item">
-          作者：SunSeekerX
+          <img class="income-images" src="@/assets/images/alipay.png" alt="支付宝" />
+          <img class="income-images" src="@/assets/images/wechat.png" alt="微信" />
         </div>
-        <div class="text item">
-          QQ: 1647800606
-        </div>
-        <div class="text item">
-          大家和平使用，本系统仅用于学习开发！后续放上源码。
-        </div>
-        
       </el-card>
     </div>
   </div>
@@ -159,7 +156,9 @@ export default {
         // 在线刷的code
         reCode: '',
         // 用户身份标识
-        encryptMobile: ''
+        encryptMobile: '',
+        // 总数
+        count: 0
       },
       limit: 50,
       offset: 0,
@@ -267,6 +266,9 @@ export default {
             if (res.data.rows.length < this.limit) {
               this.noMore = true
             }
+
+            // 总数
+            this.form.count = res.data.count
           }
 
           this.$notify({
@@ -396,8 +398,11 @@ export default {
     }
     .box-card {
       margin-top: 10px;
-      .text{
+      .text {
         line-height: 30px;
+        .income-images {
+          width: 50%;
+        }
       }
     }
   }
